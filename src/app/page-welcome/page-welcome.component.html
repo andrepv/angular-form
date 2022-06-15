@@ -1,0 +1,9 @@
+<div class="page">
+  <p *ngIf="isLoading">Loading</p>
+  
+  <div class="user-card" *ngIf="!isLoading">
+    <img class="user-logo" [src]="userLogo" />
+    <p class="user-name">{{ userName }}</p>
+  </div>
+
+</div>

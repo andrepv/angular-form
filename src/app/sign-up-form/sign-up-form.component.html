@@ -1,0 +1,42 @@
+<div class="page">
+  <div class="form">
+    <h1>Зарегистрироваться </h1>
+  
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="emial" formControlName="email"/>
+  
+        <ng-container *ngIf="email?.invalid && email?.touched">
+          <p *ngIf="email?.errors?.['required']" class="error-msg">Обязательное поле</p>
+          <p *ngIf="email?.errors?.['email']" class="error-msg">Введите правильный адрес</p>
+        </ng-container>
+      </div>
+      
+      <div class="field">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" formControlName="password"/>
+  
+        <ng-container *ngIf="password?.invalid && password?.touched">
+          <p *ngIf="password?.errors?.['required']" class="error-msg">Обязательное поле</p>
+          <p *ngIf="password?.errors?.['pattern']" class="error-msg">Пароль должен содержать только буквы и цифры</p>
+          <p *ngIf="password?.errors?.['minlength']" class="error-msg">Длина пароля больше 6 символов</p>
+          <p *ngIf="password?.errors?.['maxlength']" class="error-msg">Длина пароля не больше 20 символов</p>
+        </ng-container>
+      </div>
+    
+      <div class="field">
+        <label for="passwordConfirm">Повторите пароль</label>
+        <input type="password" id="passwordConfirm" formControlName="passwordConfirm" />
+  
+        <ng-container *ngIf="passwordConfirm?.touched">
+          <p *ngIf="form?.errors?.['passwordConfirm'] || passwordConfirm?.errors" class="error-msg">Пароли не совпадают</p>
+        </ng-container>
+        
+      </div>
+  
+      <button type="submit">Отправить</button>
+    </form>
+  
+  </div>
+</div>

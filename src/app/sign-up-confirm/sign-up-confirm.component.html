@@ -1,0 +1,14 @@
+<div class="page">
+  <div>
+    <p class="msg">на почту {{ email }} был выслан код</p>
+  
+    <div class="field">
+      <label for="code">Code</label>
+      <input id="code" type="text" [formControl]="code" />
+      <p *ngIf="code?.invalid && code?.touched && code?.errors?.['required']" class="error-msg">Введите код</p>
+    </div>
+    
+    <button type="submit" (click)="submit()">Submit</button>
+  </div>
+
+</div>
