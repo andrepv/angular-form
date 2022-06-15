@@ -1,5 +1,5 @@
 .msg {
   border-radius: 5px;
-  background: #d0def6;
+  background: var(--color-info);
   padding: 16px;
 }

@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+.root.light {
+
+  --color-bg: #fff;
+  --color-text: #000;
+  --color-border: #000;
+
+  --color-info: #d0def6;
+}
+
+.root.dark {
+
+  --color-bg: #000;
+  --color-text: #fff;
+  --color-border: #fff;
+
+  --color-info: #34383e;
+}
+
+.root {
+  background-color: var(--color-bg);
+  color: var(--color-text)
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.field {
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.error-msg {
+  margin-top: 5px;
+  color: red;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
